@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     final String TAG = this.getClass().getSimpleName();
+    static int count = 0;
 
 
     @Override
@@ -18,7 +19,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d(TAG, "enter onCreate()");
+        count++; //++:遞增運算子；等於count = count +1;
+
+        Log.d(TAG, "enter onCreate(), #" + count);
     }
 
 
@@ -27,40 +30,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStart();
         //找到view root然後設定click監聽
         findViewById(android.R.id.content).setOnClickListener(this);
-        Log.d(TAG, "enter onStart()");
+        Log.d(TAG, "enter onStart(), #" + count);
     }
 
 
 
     @Override
     protected void onStop() {
-        Log.d(TAG, "enter onStop()");
+        Log.d(TAG, "enter onStop(), #" + count);
         super.onStop();
     }
 
 
     @Override
     protected void onDestroy() {
-        Log.d(TAG, "enter onDestroy()");
+        Log.d(TAG, "enter onDestroy(), #" + count);
+        count--; // --:遞減運算子；等於count = count-1;
         super.onDestroy();
     }
 
     @Override
     protected void onPause() {
-        Log.d(TAG, "enter onPause()");
+        Log.d(TAG, "enter onPause(), #" + count);
         super.onPause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "enter onResume()");
+        Log.d(TAG, "enter onResume(), #" + count);
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG, "enter onRestart()");
+        Log.d(TAG, "enter onRestart(), #" + count);
     }
 
     @Override
@@ -73,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 overridePendingTransition(android.R.anim.slide_in_left,
                         android.R.anim.slide_out_right);
                 //強制activity終止
-                MainActivity.this.finish();
+//                MainActivity.this.finish();
                 break;
         }
 
