@@ -13,4 +13,11 @@
 
     <string name="iv_desc">icon圖示</string>
     <string name="lb_categroyHint">收入/支出 分類選擇</string>
+    <string name="title_activity_tabbed" translatable="false">TabbedActivity</string>
+    <string name="tab_text_1" translatable="false">Tab 1</string>
+    <string name="tab_text_2" translatable="false">Tab 2</string>
+    <string name="tab_text_3" translatable="false">Tab 3</string>
+    <string name="tab_text_4" translatable="false">Tab 4</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
